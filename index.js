@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const loaderUtils = require("loader-utils");
 const pbjs = require('protobufjs/cli').pbjs;
 const protobuf = require('protobufjs');
 const tmp = require('tmp-promise');
@@ -31,13 +32,12 @@ const schema = {
 module.exports = function(source) {
   let callback = this.async();
   let self = this;
-
+  let loaderOptions = loaderUtils.getOptions(this)
   const options = Object.assign({
     json: false,
-
     // Default to the paths given to the compiler (this.options is the
     // webpack options object)
-    paths: this.options.resolve.modules || [],
+    paths: loaderOptions.paths || [],
 
     pbjsArgs: [],
   }, getOptions(this));
@@ -114,6 +114,7 @@ module.exports = function(source) {
       loadDependencies.catch(function(depErr) {
         callback(depErr);
       }).then(function() {
+        console.dir(result)
         callback(err, result);
       });
     });
