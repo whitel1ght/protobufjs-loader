@@ -14,7 +14,7 @@ without an explicit compile step in your build pipeline.
 # Install
 
 ``` sh
-npm install --save-dev protobufjs-loader
+npm install --save-dev protobufjs-loader-webpack4
 ```
 
 # Usage
