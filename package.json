@@ -1,6 +1,6 @@
 {
   "name": "protobufjs-loader-webpack4",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "Webpack loader to translate .proto definitions to ProtoBuf.js modules",
   "main": "index.js",
   "scripts": {
@@ -45,6 +45,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kmontag/protobufjs-loader.git"
+    "url": "https://github.com/PermissionData/protobufjs-loader.git"
   }
 }
